@@ -1,0 +1,231 @@
+.myBox{
+    position: relative;
+    width: 325px;
+    height: 325px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.myBox::before{
+    content: '';
+    position: absolute;
+    inset: -10px 140px;
+    /*background:linear-gradient(315deg,#00ccff,#d400d4);*/
+    background:linear-gradient(315deg,#00ffb7,#d400d4);
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+}
+.myBox:hover::before{
+    inset: -20px 0px;
+}
+
+.myLogos{
+    overflow: hidden;
+    background: aliceblue;
+    white-space: nowrap;
+    position: relative;
+}
+.myLogos::before,.myLogos::after{
+    position: absolute;
+    top:0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+
+.myLogos::before{
+    left: 0;
+    background: linear-gradient(to left,rgba(255, 255, 255,0),aliceblue);
+}
+.myLogos::after{
+    right: 0;
+    background: linear-gradient(to right,rgba(255,255,255,0),aliceblue);
+}
+
+.myLogos:hover .myLogos-slides{
+    animation-play-state: paused;
+}
+.myLogos-slides{
+    display: inline-block;
+    animation: 10s slide infinite linear;
+}
+.myLogos-slides img{
+    height: 50px;
+    margin: 0 40px;
+
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.myBox::after{
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: aliceblue;
+    border-radius: 50%;
+    z-index: 1;
+
+}
+.myBoxContent{
+    position: absolute;
+    inset: 30px;
+    border: 6px solid #070a1c;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.myBoxContent img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+
+}
+.myBox:hover .myBoxContent img{
+    opacity: 0;
+}
+.myBoxContent h3{
+    position: relative;
+    font-size: 1.4em;
+    text-align: center;
+    color:#000000;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.myBoxContent h3 span{
+    font-weight: 300;
+    font-size: 0.75em;
+}
+.myBoxContent a{
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #070a1c;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.myBoxContent a:hover{
+    letter-spacing: 0.2em;
+}
+
+.mobileSkills{
+    display: none;
+}
+
+
+
+
+
+
+
+
+.scrollUp{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+  }
+  
+  .scrollUp.active{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
+  /*pop up animation for changing page*/
+  .popUp{
+    animation: transitionIn 0.5s;
+  }
+  @keyframes transitionIn{
+    from{
+      opacity: 0;
+      transform: rotateX(-10deg);
+    }
+    to{
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
+  
+  .leftSlide{
+    animation: slideLeft 1s;
+  }
+  @keyframes slideLeft {
+    from{
+      transform: translateX(-100px);
+    }
+    to{
+      transform: translateX(0px);
+    }
+    
+  }
+  
+  .rightSlide{
+    animation: slideright 1s;
+  }
+  @keyframes slideright {
+    from{
+      transform: translateX(100px);
+    }
+    to{
+      transform: translateX(0px);
+    }
+    
+  }
+  
+  .upSlide{
+    animation: slideUp 1s;
+  }
+  @keyframes slideUp {
+    from{
+      transform: translateY(100px);
+    }
+    to{
+      transform: translateY(0px);
+    }
+    
+  }
+
+  @media screen and (max-width:500px){
+    .mobileSkills{
+        display: inline;
+    }
+    .logoHolder{
+        display: none;
+    }
+    
+  }
