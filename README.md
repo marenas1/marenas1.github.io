@@ -1,2 +1,2 @@
 # Portfolio
-Online portfolio containg projects and contact info.
+Online portfolio containing projects and contact info.
