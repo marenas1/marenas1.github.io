@@ -13,7 +13,7 @@
     /*background:linear-gradient(315deg,#00ccff,#d400d4);*/
     background:linear-gradient(315deg,#00ffb7,#d400d4);
     transition: 0.5s;
-    animation: animate 4s linear infinite;
+    animation: animate 5s linear infinite;
 }
 .myBox:hover::before{
     inset: -20px 0px;
